@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guías interactivas Mayoreo</title>
+<link rel="icon" href="assets/logo-mayoreo.png">
+<style>
+:root{
+  --bg:#ffffff; --ink:#2e2e2e; --soft:#5a5a5a; --head:#6b6b6b;
+  --accent:#bdbdbd; --card:#f5f5f5; --line:#d9d9d9; --focus:#555555;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1b1b; --ink:#ececec; --soft:#b0b0b0; --head:#2e2e2e;
+    --card:#262626; --line:#3a3a3a; --focus:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1b1b1b; --ink:#ececec; --soft:#b0b0b0; --head:#2e2e2e;
+  --card:#262626; --line:#3a3a3a; --focus:#ffffff;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%}
+body{margin:0;min-height:100%;display:flex;flex-direction:column;-webkit-text-size-adjust:100%;text-size-adjust:100%;
+  background:var(--bg);color:var(--ink);font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;font-size:16px;line-height:1.5}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* Encabezado (igual que la guía) */
+.top{background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;
+  padding:14px 24px;padding-top:calc(14px + env(safe-area-inset-top,0px));position:sticky;top:0;z-index:5}
+.logo{display:grid;place-items:center;flex:none;text-decoration:none}
+.logo img{height:32px;width:auto;display:block}
+.brand{font-weight:700;font-size:18px}
+.brand small{display:block;font-weight:400;font-size:13px;color:var(--soft)}
+.band{height:6px;background:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo{background:#fff;padding:3px 7px;border-radius:6px}}
+:root[data-theme="dark"] .logo{background:#fff;padding:3px 7px;border-radius:6px}
+
+main{flex:1;padding:32px 40px 48px;max-width:1100px;width:100%;margin:0 auto}
+.mhead{border-bottom:2px solid var(--head);padding-bottom:14px;margin-bottom:24px}
+.mhead h1{font-size:30px;line-height:1.2;margin:0}
+.mhead p{margin:8px 0 0;color:var(--soft);max-width:72ch}
+
+.search{display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+.search input{flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+.search .count{font-size:13px;color:var(--soft)}
+
+/* Lista (mismo estilo que .parts / .part de la guía) */
+.parts{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.part{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line);
+  background:var(--bg);color:var(--ink);text-decoration:none}
+.part:last-child{border-bottom:0}
+.part:hover{background:var(--card)}
+.part .pn{width:40px;height:40px;border-radius:50%;border:1px solid var(--accent);display:grid;place-items:center;font-size:13px;color:var(--soft)}
+.part b{display:block;font-size:17px;margin-bottom:2px}
+.part span.d{font-size:14px;color:var(--soft)}
+.part .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:12.5px;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--soft)}
+.part .pc{font-size:13px;color:var(--soft);white-space:nowrap}
+.part .go{display:inline-block;background:var(--head);color:#fff;border-radius:6px;padding:8px 14px;font-weight:700;font-size:14px}
+.empty{border:1px dashed var(--line);border-radius:8px;padding:28px;text-align:center;color:var(--soft)}
+
+footer{border-top:1px solid var(--line);padding:16px 40px;font-size:13px;color:var(--soft);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--ink)}
+footer .flogo{height:18px;width:auto;vertical-align:middle;margin-right:6px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .flogo{background:#fff;padding:3px 6px;border-radius:6px;height:24px}}
+:root[data-theme="dark"] footer .flogo{background:#fff;padding:3px 6px;border-radius:6px;height:24px}
+
+@media (max-width:760px){
+  .top{padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top,0px))}
+  .logo img{height:26px}
+  main{padding:22px 16px 36px}
+  .mhead h1{font-size:24px}
+  .part{grid-template-columns:1fr;gap:10px}
+  .part .pn{display:none}
+  footer{padding:16px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="./" aria-label="Inicio"><img src="assets/logo-mayoreo.png" alt="Mayoreo"></a>
+  <div class="brand">Guías interactivas<small>Departamento de Procesos, Mayoreo</small></div>
+</header>
+<div class="band"></div>
+
+<main>
+  <div class="mhead">
+    <h1>Guías interactivas</h1>
+    <p>Elige una guía para aprender, paso a paso, cómo se trabaja en Mayoreo.</p>
+  </div>
+
+  <div class="search">
+    <input type="search" id="q" placeholder="Buscar una guía…" aria-label="Buscar una guía">
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+
+  <div class="parts" id="lista"></div>
+</main>
+
+<footer>
+  <span><img class="flogo" src="assets/logo-mayoreo.png" alt="">Departamento de Procesos, Mayoreo</span>
+  <a href="https://portal-interno.mayoreo.biz" target="_blank" rel="noopener">Portal Mayoreo</a>
+  <a href="https://gestionesmayoreo.vercel.app/" target="_blank" rel="noopener">Gestor de Solicitudes</a>
+</footer>
+
+<script>
+/* ============================================================
+   LISTA DE GUÍAS
+   Para agregar una guía: copia el archivo .html en esta carpeta
+   y agrega un bloque { ... } aquí abajo.
+   ============================================================ */
+const GUIAS = [
+  {
+    archivo: "Claude en Mayoreo_ guía interactiva.html",
+    titulo: "Claude en Mayoreo",
+    descripcion: "Aprende a usar Claude en tu trabajo diario, paso a paso y sin necesidad de saber de tecnología.",
+    etiquetas: ["Inteligencia artificial", "Para colaboradores"],
+    duracion: ""
+  }
+];
+
+const lista = document.getElementById('lista');
+const q = document.getElementById('q');
+const count = document.getElementById('count');
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function pintar() {
+  const t = norm(q.value.trim());
+  const vis = GUIAS.filter(g => !t || norm([g.titulo, g.descripcion, ...(g.etiquetas || [])].join(' ')).includes(t));
+  count.textContent = vis.length === 1 ? '1 guía' : vis.length + ' guías';
+  if (!vis.length) {
+    lista.className = '';
+    lista.innerHTML = '<div class="empty">No hay guías con ese tema.</div>';
+    return;
+  }
+  lista.className = 'parts';
+  lista.innerHTML = vis.map(g => `
+    <a class="part" href="${encodeURI(g.archivo)}">
+      <span class="pn" aria-hidden="true">${String(GUIAS.indexOf(g) + 1).padStart(2, '0')}</span>
+      <span>
+        <b>${esc(g.titulo)}</b>
+        <span class="d">${esc(g.descripcion)}</span>
+        ${(g.etiquetas || []).length ? `<span class="meta">${g.etiquetas.map(e => `<span class="tag">${esc(e)}</span>`).join('')}</span>` : ''}
+      </span>
+      <span class="pc">${g.duracion ? esc(g.duracion) + ' &nbsp;' : ''}<span class="go">Abrir</span></span>
+    </a>`).join('');
+}
+q.addEventListener('input', pintar);
+pintar();
+</script>
+</body>
+</html>
